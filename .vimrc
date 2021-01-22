@@ -14,7 +14,6 @@ filetype indent on
 set clipboard=unnamed
 set splitright "Abrir ventanas a la derecha
 set laststatus=2
-execute pathogen#infect()
 call plug#begin('~/.vim/plugged')
 "temas
 Plug 'tomasr/molokai'
@@ -28,6 +27,7 @@ Plug 'mantoni/eslint_d.js'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdcommenter'
 Plug 'Yggdroot/indentLine'
+Plug 'digitaltoad/vim-pug'
 call plug#end()
 "configuraciones de emmet
 let g:user_emmet_mode='n'
