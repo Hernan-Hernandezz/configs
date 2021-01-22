@@ -27,10 +27,17 @@ Plug 'mattn/emmet-vim'
 Plug 'mantoni/eslint_d.js'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdcommenter'
+Plug 'Yggdroot/indentLine'
 call plug#end()
 "configuraciones de emmet
 let g:user_emmet_mode='n'
 let g:user_emmet_expandabbr_key='m'
+
+"configuracion de indentLine
+" No mostrar en ciertos tipos de buffers y archivos
+let g:indentLine_fileTypeExclude = ['text', 'sh', 'help', 'terminal']
+let g:indentLine_bufNameExclude = ['NERD_tree.*', 'term:.*']
+
 
 colorscheme molokai
 let g:molokai_original = 1
