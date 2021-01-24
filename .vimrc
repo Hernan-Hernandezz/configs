@@ -29,6 +29,8 @@ Plug 'preservim/nerdcommenter'
 Plug 'Yggdroot/indentLine'
 Plug 'digitaltoad/vim-pug'
 Plug 'digitaltoad/vim-airline'
+Plug 'tpope/vim-fugitive'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 "configuraciones de emmet
 let g:user_emmet_mode='n'
