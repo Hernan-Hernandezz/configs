@@ -28,10 +28,14 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdcommenter'
 Plug 'Yggdroot/indentLine'
 Plug 'digitaltoad/vim-pug'
+Plug 'digitaltoad/vim-airline'
 call plug#end()
 "configuraciones de emmet
 let g:user_emmet_mode='n'
 let g:user_emmet_expandabbr_key='m'
+
+"configuracion de vim-airline
+let g:airline_theme='simple'
 
 "configuracion de indentLine
 " No mostrar en ciertos tipos de buffers y archivos
@@ -122,7 +126,6 @@ nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
