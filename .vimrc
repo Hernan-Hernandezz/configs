@@ -11,34 +11,45 @@ set tabstop=2
 set expandtab
 set autoindent
 filetype indent on
-set clipboard=unnamed
+set clipboard=unnamedplus
 set splitright "Abrir ventanas a la derecha
 set laststatus=2
 call plug#begin('~/.vim/plugged')
 "temas
 Plug 'tomasr/molokai'
+Plug 'rakr/vim-one'
 "IDE
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdtree'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-syntastic/syntastic'
 Plug 'mattn/emmet-vim'
+Plug 'digitaltoad/vim-airline'
 Plug 'mantoni/eslint_d.js'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdcommenter'
 Plug 'Yggdroot/indentLine'
 Plug 'digitaltoad/vim-pug'
-Plug 'digitaltoad/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'jiangmiao/auto-pairs'
+Plug 'prettier/vim-prettier', 
+
+Plug 'eslint/eslint'
+
+Plug 'xianzhon/vim-code-runner'
 call plug#end()
+
+packloadall
+
+
 "configuraciones de emmet
 let g:user_emmet_mode='n'
 let g:user_emmet_expandabbr_key='m'
 
 "configuracion de vim-airline
 let g:airline_theme='simple'
-
+"let g:airline_powerline_fonts = 1
+"set guifont= nerd/14
 "configuracion de indentLine
 " No mostrar en ciertos tipos de buffers y archivos
 let g:indentLine_fileTypeExclude = ['text', 'sh', 'help', 'terminal']
@@ -46,13 +57,14 @@ let g:indentLine_bufNameExclude = ['NERD_tree.*', 'term:.*']
 
 
 colorscheme molokai
-let g:molokai_original = 1
+set background=dark
+"let g:molokai_original = 1
 let mapleader=' '
 nmap <Leader><Esc> :q!<cr> 
 nmap <Leader>s <plug>(easymotion-s2)
 nmap <Leader>nt :NERDTreeFind<CR>
 "atajos de teclado
-nmap <Leader>w :w<cr>
+nmap <Leader>w <Plug>(Prettier) :w<cr>
 nmap <Leader>q :q<cr>
   "quitar seleccion de remplazo o busqueda
 nmap <C-W> :noh<cr>
@@ -127,3 +139,5 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 
+"code runner
+nmap<silent><leader>B <plug>CodeRunner
