@@ -15,9 +15,9 @@ set clipboard=unnamedplus
 set splitright "Abrir ventanas a la derecha
 set laststatus=2
 
-so ./.vim/maps.vim
-so ./.vim/plugins.vim
-so ./.vim/plugins-config.vim
+so ~/config-vim/.vim/maps.vim
+so ~/config-vim/.vim/plugins.vim
+so ~/config-vim/.vim/plugins-config.vim
 packloadall
 
 "config de coc-prettier

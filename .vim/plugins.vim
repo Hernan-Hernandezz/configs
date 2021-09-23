@@ -21,6 +21,10 @@ Plug 'eslint/eslint'
 Plug 'dense-analysis/ale'
 Plug 'ap/vim-css-color'
 Plug 'xianzhon/vim-code-runner'
+"live server
+Plug 'turbio/bracey.vim'
+
+Plug 'tpope/vim-surround'
 call plug#end()
 
 
