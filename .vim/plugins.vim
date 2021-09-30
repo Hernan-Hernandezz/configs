@@ -25,6 +25,9 @@ Plug 'xianzhon/vim-code-runner'
 Plug 'turbio/bracey.vim'
 
 Plug 'tpope/vim-surround'
+Plug 'alvan/vim-closetag'
+Plug 'ryanoasis/vim-devicons'
+
 call plug#end()
 
 
