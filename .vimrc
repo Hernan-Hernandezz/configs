@@ -15,23 +15,20 @@ set clipboard=unnamedplus
 set splitright "Abrir ventanas a la derecha
 set laststatus=2
 
-so ~/config-vim/.vim/maps.vim
-so ~/config-vim/.vim/plugins.vim
-so ~/config-vim/.vim/plugins-config.vim
+so ~/configs/.vim/maps.vim
+so ~/configs/.vim/plugins.vim
+so ~/configs/.vim/plugins-config.vim
 packloadall
 
 "config de coc-prettier
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 
+let g:airline_theme='simple'
 
 "configuraciones de emmet
 let g:user_emmet_mode='n'
 let g:user_emmet_expandabbr_key='m'
 
-"configuracion de vim-airline
-let g:airline_theme='simple'
-"let g:airline_powerline_fonts = 1
-"set guifont= nerd/14
 "configuracion de indentLine
 " No mostrar en ciertos tipos de buffers y archivos
 let g:indentLine_fileTypeExclude = ['text', 'sh', 'help', 'terminal']

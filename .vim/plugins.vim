@@ -8,7 +8,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-syntastic/syntastic'
 Plug 'mattn/emmet-vim'
-Plug 'digitaltoad/vim-airline'
 Plug 'mantoni/eslint_d.js'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdcommenter'
@@ -27,6 +26,16 @@ Plug 'turbio/bracey.vim'
 Plug 'tpope/vim-surround'
 Plug 'alvan/vim-closetag'
 Plug 'ryanoasis/vim-devicons'
+
+Plug 'jmcantrell/vim-virtualenv'
+
+Plug 'digitaltoad/vim-airline'
+
+Plug 'SirVer/ultisnips'
+
+Plug 'mlaursen/vim-react-snippets'
+
+
 
 call plug#end()
 
