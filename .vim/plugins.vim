@@ -1,7 +1,6 @@
 call plug#begin('~/.vim/plugged')
 "temas
 Plug 'tomasr/molokai'
-Plug 'rakr/vim-one'
 "IDE
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdtree'
@@ -12,16 +11,11 @@ Plug 'mantoni/eslint_d.js'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdcommenter'
 Plug 'Yggdroot/indentLine'
-Plug 'digitaltoad/vim-pug'
 Plug 'tpope/vim-fugitive'
 Plug 'jiangmiao/auto-pairs'
 Plug 'eslint/eslint'
 "config de linters
-Plug 'dense-analysis/ale'
 Plug 'ap/vim-css-color'
-Plug 'xianzhon/vim-code-runner'
-"live server
-Plug 'turbio/bracey.vim'
 
 Plug 'tpope/vim-surround'
 Plug 'alvan/vim-closetag'
@@ -34,6 +28,8 @@ Plug 'digitaltoad/vim-airline'
 Plug 'SirVer/ultisnips'
 
 Plug 'mlaursen/vim-react-snippets'
+
+Plug 'mxw/vim-jsx'
 
 
 
