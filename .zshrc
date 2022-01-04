@@ -80,7 +80,10 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
+#source $ZSH/custom/plugins/exa/completions/exa.zsh
+# User configurationntigen Plugin
+#
+#source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/exa/completions/exa.zsh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -105,10 +108,12 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias estudio="cd /mnt/e/estudio"
+# 
+alias estudio="cd /mnt/d/estudio"
 
 alias alacrittyConfig="nvim /mnt/c/Users/andre/AppData/Roaming/alacritty/alacritty.yml"
- 
+
+alias la="ls -lah --color"
 
 LS_COLORS=$LS_COLORS:'ow=1;34:tw=1;34:' ; export LS_COLORS
 
