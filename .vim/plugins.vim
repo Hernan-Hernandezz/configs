@@ -19,7 +19,7 @@ Plug 'ap/vim-css-color'
 
 Plug 'tpope/vim-surround'
 Plug 'alvan/vim-closetag'
-Plug 'ryanoasis/vim-devicons'
+"Plug 'ryanoasis/vim-devicons'
 
 Plug 'jmcantrell/vim-virtualenv'
 
@@ -30,6 +30,7 @@ Plug 'SirVer/ultisnips'
 Plug 'mlaursen/vim-react-snippets'
 
 Plug 'mxw/vim-jsx'
+Plug 'honza/vim-snippets'
 
 
 

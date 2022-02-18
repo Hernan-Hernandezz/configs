@@ -53,4 +53,12 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 
-
+"vim-closetag
+let g:closetag_filenames = '*.xhtml,*.jsx,*js'
+"let g:closetag_regions = {
+       "'typescript.tsx': 'jsxRegion,tsxRegion',
+     "'javascript.jsx': 'jsxRegion',
+     "'typescriptreact': 'jsxRegion,tsxRegion',
+     "'javascriptreact': 'jsxRegion',
+     
+  "}
