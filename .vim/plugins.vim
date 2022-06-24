@@ -20,7 +20,7 @@ Plug 'ap/vim-css-color'
 
 Plug 'tpope/vim-surround'
 Plug 'alvan/vim-closetag'
-"Plug 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
 Plug 'jmcantrell/vim-virtualenv'
 
 Plug 'digitaltoad/vim-airline'
@@ -32,10 +32,17 @@ Plug 'mlaursen/vim-react-snippets'
 
 Plug 'mxw/vim-jsx'
 Plug 'honza/vim-snippets'
-
 "config git
 Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'gregsexton/gitv'
+Plug 'kurocode25/mdforvim'
+
+Plug 'editorconfig/editorconfig-vim'
+Plug 'tell-k/vim-autopep8'
+
+Plug 'chiel92/vim-autoformat'
+Plug 'vim-python/python-syntax'
+"snippets
 call plug#end()
 
 

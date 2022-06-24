@@ -6,7 +6,7 @@ nmap <Leader>nt :NERDTreeFind<CR>
 nmap <Leader>w :w<cr>
 nmap <Leader>q :q<cr>
   "quitar seleccion de remplazo o busqueda
-nmap <C-W> :noh<cr>
+nmap <Leader><C-W> :noh<cr>
   "remplazo de palabras
 nmap <C-s> :%s/
 "desplazo de ventanas

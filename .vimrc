@@ -15,6 +15,8 @@ set clipboard=unnamedplus
 set splitright "Abrir ventanas a la derecha
 set laststatus=2
 
+highlight NonText ctermbg=none
+
 so ~/configs/.vim/maps.vim
 so ~/configs/.vim/plugins.vim
 so ~/configs/.vim/plugins-config.vim
@@ -53,3 +55,4 @@ let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_
 "prettier config
 
 
+hi Normal ctermbg=none

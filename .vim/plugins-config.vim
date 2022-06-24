@@ -62,3 +62,10 @@ let g:closetag_filenames = '*.xhtml,*.jsx,*js'
      "'javascriptreact': 'jsxRegion',
      
   "}
+
+let g:python3_host_prog = "/bin/python3"
+let g:formatters_python = ['black', 'autopep8']
+let g:run_all_formatters_python = 1
+
+let g:python_highlight_all = 1
+au BufWrite * :Autoformat

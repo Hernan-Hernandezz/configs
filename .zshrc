@@ -1,10 +1,10 @@
 ZSH_THEME="nanotech"
 
- DISABLE_LS_COLORS="true"
+DISABLE_LS_COLORS="true"
 
- DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
- ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 plugins=(
   git
@@ -12,17 +12,15 @@ plugins=(
   zsh-syntax-highlighting
   web-search
   extract
-  )
+)
 
-source $ZSH/oh-my-zsh.sh
+source ~/.oh-my-zsh/oh-my-zsh.sh
 
 #alias
 
-alias estudio="cd /mnt/d/estudio"
+alias estudio="cd ~/Escritorio/estudio"
 
-alias alacrittyConfig="nvim /mnt/c/Users/andre/AppData/Roaming/alacritty/alacritty.yml"
-
-alias la="ls -lah --color"
-
+alias la="ls -la --color"
 LS_COLORS=$LS_COLORS:'ow=1;34:tw=1;34:' ; export LS_COLORS
 
+eval "$(zoxide init zsh)"
