@@ -17,14 +17,13 @@ set laststatus=2
 
 highlight NonText ctermbg=none
 
-so ~/configs/.vim/maps.vim
-so ~/configs/.vim/plugins.vim
-so ~/configs/.vim/plugins-config.vim
-packloadall
+so ~/configs/vim/maps.vim
+so ~/configs/vim/plugins.vim
+so ~/configs/vim/plugins-config.vim
 
 "config de coc-prettier
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
-
+let g:loaded_perl_provider = 0
 let g:airline_theme='simple'
 
 "configuraciones de emmet
@@ -39,7 +38,7 @@ let g:indentLine_bufNameExclude = ['NERD_tree.*', 'term:.*']
 
 colorscheme molokai
 set background=dark
-"let g:molokai_original = 1
+let g:molokai_original = 1
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -55,4 +54,4 @@ let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_
 "prettier config
 
 
-hi Normal ctermbg=none
+"hi Normal ctermbg=none
