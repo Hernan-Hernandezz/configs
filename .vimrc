@@ -25,6 +25,8 @@ packloadall
 "config de coc-prettier
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 
+
+
 let g:airline_theme='simple'
 
 "configuraciones de emmet
@@ -51,8 +53,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exec = 'eslint_d'
 let g:syntastic_aggregate_errors = 1
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] } 
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 "prettier config
-
 
 hi Normal ctermbg=none

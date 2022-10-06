@@ -42,7 +42,9 @@ Plug 'tell-k/vim-autopep8'
 
 Plug 'chiel92/vim-autoformat'
 Plug 'vim-python/python-syntax'
-"snippets
+Plug 'vim-scripts/django.vim'
+Plug 'AndrewRadev/tagalong.vim'
+"Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 call plug#end()
 
 
