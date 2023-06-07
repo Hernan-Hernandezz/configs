@@ -8,13 +8,13 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'vim-syntastic/syntastic'
 Plug 'pangloss/vim-javascript'
 Plug 'mattn/emmet-vim'
-Plug 'mantoni/eslint_d.js'
+"Plug 'mantoni/eslint_d.js'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdcommenter'
 Plug 'Yggdroot/indentLine'
 Plug 'tpope/vim-fugitive'
 Plug 'jiangmiao/auto-pairs'
-Plug 'eslint/eslint'
+"Plug 'eslint/eslint'
 "config de linters
 Plug 'ap/vim-css-color'
 
@@ -23,9 +23,9 @@ Plug 'alvan/vim-closetag'
 Plug 'ryanoasis/vim-devicons'
 Plug 'jmcantrell/vim-virtualenv'
 
-Plug 'digitaltoad/vim-airline'
+"Plug 'digitaltoad/vim-airline'
 Plug 'airblade/vim-gitgutter'
-
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'SirVer/ultisnips'
 
 Plug 'mlaursen/vim-react-snippets'
@@ -44,6 +44,7 @@ Plug 'chiel92/vim-autoformat'
 Plug 'vim-python/python-syntax'
 Plug 'vim-scripts/django.vim'
 Plug 'AndrewRadev/tagalong.vim'
+Plug 'nvim-lualine/lualine.nvim'
 "Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 call plug#end()
 

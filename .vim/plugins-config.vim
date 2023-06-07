@@ -50,22 +50,22 @@ endif
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+      \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 
 "vim-closetag
 let g:closetag_filenames = '*.xhtml,*.jsx,*js'
 "let g:closetag_regions = {
-       "'typescript.tsx': 'jsxRegion,tsxRegion',
-     "'javascript.jsx': 'jsxRegion',
-     "'typescriptreact': 'jsxRegion,tsxRegion',
-     "'javascriptreact': 'jsxRegion',
-     
-  "}
+"'typescript.tsx': 'jsxRegion,tsxRegion',
+"'javascript.jsx': 'jsxRegion',
+"'typescriptreact': 'jsxRegion,tsxRegion',
+"'javascriptreact': 'jsxRegion',
+
+"}
 
 let g:python3_host_prog = "/bin/python3"
 let g:formatters_python = ['black', 'autopep8']
 let g:run_all_formatters_python = 1
 
 let g:python_highlight_all = 1
-au BufWrite * :Autoformat
+"au BufWrite * :Autoformat
