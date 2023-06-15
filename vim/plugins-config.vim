@@ -1,80 +1,84 @@
-"configuracion de coc
-"
-" TextEdit might fail if hidden is not set.
-set hidden
+" Configuración de coc
 
-" Some servers have issues with backup files, see #649.
+set hidden
 set nobackup
 set nowritebackup
 
-" Give more space for displaying messages.
 set cmdheight=2
 
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
 set updatetime=300
 
-" Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
 if has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
+  " Fusionar la columna de signos con la columna de números
   set signcolumn=number
 else
   set signcolumn=yes
 endif
 
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Use <c-space> to trigger completion.
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
-endif
-
-" Make <CR> auto-select the first completion item and notify coc.nvim to
-" format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-      \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-
-"vim-closetag
+" Configuración de vim-closetag
 let g:closetag_filenames = '*.xhtml,*.jsx,*js'
-"let g:closetag_regions = {
-"'typescript.tsx': 'jsxRegion,tsxRegion',
-"'javascript.jsx': 'jsxRegion',
-"'typescriptreact': 'jsxRegion,tsxRegion',
-"'javascriptreact': 'jsxRegion',
-
-"}
 
 let g:python3_host_prog = "/bin/python3"
 let g:formatters_python = ['black', 'autopep8']
 let g:run_all_formatters_python = 1
 
 let g:python_highlight_all = 1
-au BufWrite *.py :Autoformat
-let g:copilot_filetypes = {
-      \ '*': v:false,
-      \ 'python': v:true,
-      \ 'javascript': v:true,
-      \ 'javascriptreact': v:true,
-      \ 'html': v:true,
-      \ 'css': v:true,
-      \ }
+
+" Ejecutar Autoformat al guardar el archivo
+" (descomenta si deseas habilitar esta función)
+"au BufWrite * :Autoformat
+
+" Configuración básica de coc
+
+" Iniciar coc
+let g:coc_global_extensions = [
+  \ 'coc-tsserver', 'coc-css', 'coc-html', 'coc-json',
+  \ 'coc-python', 'coc-snippets'
+  \ ]
+
+" Habilitar autocompletado
+inoremap <silent><expr> <CR> pumvisible() ? coc#_select_confirm() : "\<CR>"
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" Mapear el comando de activación de autocompletado
+" según tus preferencias
+nmap <silent> <Leader>ca :<C-u>CocList completions<CR>
+
+" Mapear el comando de apertura de la lista de diagnósticos
+nmap <silent> <Leader>cd :<C-u>CocList diagnostics<CR>
+
+" Mapear el comando de apertura de la ventana de referencia
+nmap <silent> <Leader>cr :<C-u>CocRefactor<CR>
+
+" Mapear el comando de formato del documento
+nmap <silent> <Leader>cf :<C-u>CocCommand format<CR>
+
+" Configuración del tema
+" Cambiar 'onedark' al tema de tu elección
+" Ejemplo: 'coc-prettier', 'coc-pyright', 'coc-eslint', etc.
+" Puedes verificar los nombres de los temas y extensiones disponibles
+" ejecutando el comando :CocList marketplace en Vim.
+let g:coc_global_config = {
+  \ 'coc.preferences.formatOnSaveFiletypes': ['css', 'html', 'javascript', 'json', 'markdown', 'python', 'typescript', 'javascriptreact', 'typescriptreact'],
+  \ 'coc.preferences.formatOnSaveEnable': 1,
+  \ 'coc.preferences.completion.triggerCharacter': ['.', ':', '::'],
+  \ 'coc.preferences.completion.autoTrigger': 'always',
+  \ 'coc.preferences.diagnostic.enableSign': 1,
+  \ 'coc.preferences.diagnostic.displayByAle': v:true,
+  \ 'coc.preferences.diagnostic.displayVirtualText': v:true,
+  \ 'coc.preferences.diagnostic.virtualTextSigns': [
+    \ { "sign": "*", "highlight": "CocWarningSign" },
+    \ { "sign": "*", "highlight": "CocErrorSign" },
+    \ { "sign": "*", "highlight": "CocInfoSign" }
+    \ ],
+  \ 'coc.preferences.diagnostic.signOffset': 10000,
+  \ 'coc.preferences.remappings': {
+    \ 'workspace.symbol': 'gS',
+    \ 'workspace.references': 'gR',
+    \ 'extensions.toggle': 'gX'
+    \ }
+  \ }
 
