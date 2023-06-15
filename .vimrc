@@ -1,16 +1,17 @@
 set number relativenumber
 set numberwidth=1
-set number
 set ruler
 syntax on
 set showcmd
 set encoding=utf-8
-"configuracion de tabulaciones
+
+" Configuración de tabulaciones
 set shiftwidth=2
 set tabstop=2
 set expandtab
 set autoindent
 filetype indent on
+
 set clipboard=unnamedplus
 set splitright "Abrir ventanas a la derecha
 set laststatus=2
@@ -18,31 +19,29 @@ set foldmethod=syntax
 
 highlight NonText ctermbg=none
 
+" Cargar archivos de configuración adicionales
 so ~/configs/.vim/maps.vim
 so ~/configs/.vim/plugins.vim
 so ~/configs/.vim/plugins-config.vim
 packloadall
 
-"config de coc-prettier
+" Configuración de coc-prettier
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
-
-
 
 let g:airline_theme='simple'
 
-"configuraciones de emmet
+" Configuraciones de Emmet
 let g:user_emmet_mode='n'
 let g:user_emmet_expandabbr_key='m'
 
-"configuracion de indentLine
+" Configuración de indentLine
 " No mostrar en ciertos tipos de buffers y archivos
 let g:indentLine_fileTypeExclude = ['text', 'sh', 'help', 'terminal']
 let g:indentLine_bufNameExclude = ['NERD_tree.*', 'term:.*']
 
-
 colorscheme molokai
 set background=dark
-"let g:molokai_original = 1
+
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -55,25 +54,23 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exec = 'eslint_d'
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
-"prettier config
 
+if exists("javaScript_fold")
+  syn match javaScriptFunction "\<function\>"
+  syn region javaScriptFunctionFold start="\<function\>.*[^};]$" end="^\z1}.*$" transparent fold keepend
+  syn sync match javaScriptSync grouphere javaScriptFunctionFold "\<function\>"
+  syn sync match javaScriptSync grouphere NONE "^}" setlocal foldmethod=syntax setlocal foldtext=getline(v:foldstart)
+else
+  syn keyword javaScriptFunction function
+  syn match javaScriptBraces "[{}\[\]]"
+  syn match javaScriptParens "[()]"
+endif
 
-if exists("javaScript_fold") 
-  syn match javaScriptFunction "\<function\>" 
-  syn region javaScriptFunctionFold start="\<function\>.*[^};]$" end="^\z1}.*$" transparent fold keepend 
-  syn sync match javaScriptSync grouphere javaScriptFunctionFold "\<function\>" 
-  syn sync match javaScriptSync grouphere NONE "^}" setlocal foldmethod=syntax setlocal foldtext=getline(v:foldstart) 
-else 
-  syn keyword javaScriptFunction function 
-  syn match javaScriptBraces "[{}\[\]]" 
-  syn match javaScriptParens "[()]" 
-endif 
-
-syn sync fromstart 
+syn sync fromstart
 syn sync maxlines=100
 
-
 hi Normal ctermbg=none
+
 lua << END
 -- Eviline config for lualine
 -- Author: shadmansaleh
@@ -118,14 +115,14 @@ local config = {
     section_separators = '',
     theme = {
       -- We are going to use lualine_c an lualine_x as left and
-      -- right section. Both are highlighted by c theme .  So we
-      -- are just setting default looks o statusline
+      -- right section. Both are highlighted by c theme. So we
+      -- are just setting default looks of statusline
       normal = { c = { fg = colors.fg, bg = colors.bg } },
       inactive = { c = { fg = colors.fg, bg = colors.bg } },
     },
   },
   sections = {
-    -- these are to remove the defaults
+    -- These are to remove the defaults
     lualine_a = {},
     lualine_b = {},
     lualine_y = {},
@@ -135,7 +132,7 @@ local config = {
     lualine_x = {},
   },
   inactive_sections = {
-    -- these are to remove the defaults
+    -- These are to remove the defaults
     lualine_a = {},
     lualine_b = {},
     lualine_y = {},
@@ -145,12 +142,12 @@ local config = {
   },
 }
 
--- Inserts a component in lualine_c at left section
+-- Inserts a component in lualine_c at the left section
 local function ins_left(component)
   table.insert(config.sections.lualine_c, component)
 end
 
--- Inserts a component in lualine_x ot right section
+-- Inserts a component in lualine_x at the right section
 local function ins_right(component)
   table.insert(config.sections.lualine_x, component)
 end
@@ -159,17 +156,17 @@ ins_left {
   function()
     return '▊'
   end,
-  color = { fg = colors.blue }, -- Sets highlighting of component
+  color = { fg = colors.blue }, -- Sets highlighting of the component
   padding = { left = 0, right = 1 }, -- We don't need space before this
 }
 
 ins_left {
-  -- mode component
+  -- Mode component
   function()
     return ''
   end,
   color = function()
-    -- auto change color according to neovims mode
+    -- Auto change color according to Neovim's mode
     local mode_color = {
       n = colors.red,
       i = colors.green,
@@ -198,7 +195,7 @@ ins_left {
 }
 
 ins_left {
-  -- filesize component
+  -- Filesize component
   'filesize',
   cond = conditions.buffer_not_empty,
 }
@@ -224,8 +221,8 @@ ins_left {
   },
 }
 
--- Insert mid section. You can make any number of sections in neovim :)
--- for lualine it's any number greater then 2
+-- Insert mid section. You can make any number of sections in Neovim :)
+-- For lualine, it's any number greater than 2
 ins_left {
   function()
     return '%='
@@ -235,8 +232,8 @@ ins_left {
 
 -- Add components to right sections
 ins_right {
-  'o:encoding', -- option component same as &encoding in viml
-  fmt = string.upper, -- I'm not sure why it's upper case either ;)
+  'o:encoding', -- Option component, same as &encoding in VimL
+  fmt = string.upper, -- I'm not sure why it's uppercase either ;)
   cond = conditions.hide_in_width,
   color = { fg = colors.green, gui = 'bold' },
 }
@@ -244,7 +241,7 @@ ins_right {
 ins_right {
   'fileformat',
   fmt = string.upper,
-  icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
+  icons_enabled = false, -- I think icons are cool, but Eviline doesn't have them. Sigh
   color = { fg = colors.green, gui = 'bold' },
 }
 
@@ -256,7 +253,7 @@ ins_right {
 
 ins_right {
   'diff',
-  -- Is it me or the symbol for modified us really weird
+  -- Is it me or the symbol for modified is really weird
   symbols = { added = ' ', modified = '*', removed = ' ' },
   diff_color = {
     added = { fg = colors.green },
@@ -277,3 +274,4 @@ ins_right {
 -- Now don't forget to initialize lualine
 lualine.setup(config)
 END
+

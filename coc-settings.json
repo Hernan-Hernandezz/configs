@@ -1,15 +1,19 @@
 {
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath": "~/.virtualenvs/neovim/bin/black",
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
-    "markdown",
     "javascript",
     "html",
+    "htmldjango",
     "json",
     "scss",
     "less",
     "mdx",
     "yaml",
     "jsx",
-    "javascriptreact"
-  ]
+    "javascriptreact",
+    "python"
+  ],
+  "prettier.bracketSpacing": true
 }

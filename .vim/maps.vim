@@ -1,29 +1,41 @@
 let mapleader=" "
-nmap <Leader><Esc> :q!<cr> 
+
+" Mapeo para cerrar el archivo sin guardar
+nmap <Leader><Esc> :q!<cr>
+
+" Mapeo para activar EasyMotion
 nmap <Leader>s <plug>(easymotion-s2)
+
+" Mapeo para abrir NERDTree y resaltar el archivo actual
 nmap <Leader>nt :NERDTreeFind<CR>
-"atajos de teclado
+
+" Atajos de teclado
 nmap <Leader>w :w<cr>
 nmap <Leader>q :q<cr>
-  "quitar seleccion de remplazo o busqueda
+
+" Desactivar resaltado de búsqueda o reemplazo
 nmap <Leader><C-W> :noh<cr>
-  "remplazo de palabras
+
+" Reemplazar palabras
 nmap <C-s> :%s/
-"desplazo de ventanas
+
+" Desplazamiento de ventanas
 nnoremap <Leader>> 10<C-w>>
 nnoremap <Leader>< 10<C-w><
 
-
-"code runner
+" Code Runner
 nmap<silent><leader>B <plug>CodeRunner
 
+" Verificar y alternar el modo de Syntastic
 nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
+
+" Abrir Bracey para previsualizar el archivo HTML/CSS/JS
 nmap <Leader>l :Bracey<cr>
 nmap <Leader>lc :BraceyStop<cr>
 
-
+" Función para abrir una terminal
 function! OpenTerminal()
-  " move to right most buffer
+  " Mover al buffer más a la derecha
   execute "normal \<C-l>"
   execute "normal \<C-l>"
   execute "normal \<C-l>"
@@ -33,21 +45,21 @@ function! OpenTerminal()
   let bufType = getbufvar(bufNum, "&buftype", "not found")
 
   if bufType == "terminal"
-    " close existing terminal
+    " Cerrar la terminal existente
     execute "q"
   else
-    " open terminal
+    " Abrir una terminal
     execute "vsp term://zsh"
 
-    " turn off numbers
+    " Desactivar números de línea
     execute "set nonu"
     execute "set nornu"
 
-    " toggle insert on enter/exit
+    " Alternar el modo de inserción al entrar o salir
     silent au BufLeave <buffer> stopinsert!
     silent au BufWinEnter,WinEnter <buffer> startinsert!
 
-    " set maps inside terminal buffer
+    " Establecer mapeos dentro del buffer de la terminal
     execute "tnoremap <buffer> <C-h> <C-\\><C-n><C-w><C-h>"
     execute "tnoremap <buffer> <C-t> <C-\\><C-n>:q<CR>"
     execute "tnoremap <buffer> <C-\\><C-\\> <C-\\><C-n>"
@@ -55,7 +67,10 @@ function! OpenTerminal()
     startinsert!
   endif
 endfunction
+
+" Mapeo para abrir una terminal
 nnoremap <C-t> :call OpenTerminal()<CR>
 
-
+" Mapeo para usar el plugin VSurround en modo visual
 xmap s <Plug>VSurround
+
