@@ -39,8 +39,9 @@ let g:user_emmet_expandabbr_key='m'
 let g:indentLine_fileTypeExclude = ['text', 'sh', 'help', 'terminal']
 let g:indentLine_bufNameExclude = ['NERD_tree.*', 'term:.*']
 
-colorscheme molokai
-set background=dark
+"colorscheme molokai
+colorscheme gruvbox
+set background=light
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -80,17 +81,17 @@ local lualine = require('lualine')
 -- Color table for highlights
 -- stylua: ignore
 local colors = {
-  bg       = '#202328',
-  fg       = '#bbc2cf',
-  yellow   = '#ECBE7B',
+  bg       = '#fbf1c7',
+  fg       = '#6a6e75',
+  yellow   = '#d79921',
   cyan     = '#008080',
   darkblue = '#081633',
   green    = '#98be65',
   orange   = '#FF8800',
   violet   = '#a9a1e1',
   magenta  = '#c678dd',
-  blue     = '#51afef',
-  red      = '#ec5f67',
+  blue     = '#458588',
+  red      = '#cc241d',
 }
 
 local conditions = {

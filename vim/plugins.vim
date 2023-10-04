@@ -2,7 +2,8 @@ call plug#begin('~/.vim/plugged')
 
 " Temas
 Plug 'tomasr/molokai'
-
+Plug 'morhetz/gruvbox'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 " IDE
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdtree'
@@ -42,6 +43,8 @@ Plug 'mxw/vim-jsx'
 " Autoformatting
 Plug 'tell-k/vim-autopep8'
 Plug 'chiel92/vim-autoformat'
+" post install (yarn install | npm install) then load plugin only for editing supported files
+Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 
 " Syntax Highlighting
 Plug 'vim-python/python-syntax'
@@ -49,7 +52,7 @@ Plug 'wuelnerdotexe/vim-astro'
 
 " Airline (descomenta si lo necesitas)
 "Plug 'digitaltoad/vim-airline'
-"Plug 'kyazdani42/nvim-web-devicons'
+Plug 'kyazdani42/nvim-web-devicons'
 "Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Otros plugins y configuraciones

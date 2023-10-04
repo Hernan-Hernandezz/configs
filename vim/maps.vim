@@ -73,4 +73,10 @@ nnoremap <C-t> :call OpenTerminal()<CR>
 
 " Mapeo para usar el plugin VSurround en modo visual
 xmap s <Plug>VSurround
+let g:user_emmet_leader_key='<leader>m'
 
+" Mapeo para cambiar a la pestaña siguiente (similar a Ctrl + Tab en Chrome)
+nmap <Leader><Tab> :tabnext<CR>
+
+" Mapeo para cambiar a la pestaña anterior (similar a Ctrl + Shift + Tab en Chrome)
+nmap <Leader><S-Tab> :tabprevious<CR>

@@ -18,7 +18,7 @@ else
 endif
 
 " Configuración de vim-closetag
-let g:closetag_filenames = '*.xhtml,*.jsx,*js'
+let g:closetag_filenames = '*.xhtml,*.jsx,*js,*.astro'
 
 let g:python3_host_prog = "/bin/python3"
 let g:formatters_python = ['black', 'autopep8']
@@ -29,6 +29,9 @@ let g:python_highlight_all = 1
 " Ejecutar Autoformat al guardar el archivo
 " (descomenta si deseas habilitar esta función)
 "au BufWrite * :Autoformat
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
+"
+let g:prettier#autoformat = 1
 
 " Configuración básica de coc
 
@@ -82,3 +85,18 @@ let g:coc_global_config = {
     \ }
   \ }
 
+"usar emmet en todo los modos
+let g:user_emmet_mode='inv'
+
+"configuracion para astro
+" Agrega astro al archivo coc-settings.json
+let g:coc_settings = {
+  \ "languageserver": {
+    \ "astro": {
+      \ "command": "astro",
+      \ "filetypes": ["astro"],
+      \ "rootPatterns": ["astro.toml"],
+      \ "initializationOptions": {}
+    \ }
+  \ },
+\ }
